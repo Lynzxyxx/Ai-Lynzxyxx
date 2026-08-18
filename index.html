@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isi Biodata Kamu 💕</title>
+
+    <!-- Google Fonts untuk tampilan lebih elegan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffc8dd 0%, #cdb4db 50%, #bde0fe 100%);
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== ANIMASI JATUH (HATI & BUNGA) ========== */
+        .falling-element {
+            position: fixed;
+            top: -60px;
+            font-size: 28px;
+            animation: fall linear infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+            user-select: none;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg) scale(0.4);
+                opacity: 0.1;
+            }
+        }
+
+        /* ========== CARD UTAMA ========== */
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 520px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 36px 32px 40px;
+            box-shadow: 0 20px 60px rgba(180, 120, 200, 0.30),
+                        0 0 0 1px rgba(255, 255, 255, 0.40) inset;
+            border: 1px solid rgba(255, 255, 255, 0.30);
+            transition: all 0.3s ease;
+        }
+
+        /* ========== JUDUL ========== */
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #5e3a6b;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .title span {
+            display: inline-block;
+            animation: pulse-heart 1.6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 400;
+            color: #7a4f8a;
+            margin-bottom: 28px;
+            letter-spacing: 0.3px;
+        }
+
+        /* ========== FORM ========== */
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4c2b57;
+            margin-bottom: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group label i {
+            margin-right: 6px;
+            color: #e06b8a;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper .icon-heart {
+            position: absolute;
+            left: 14px;
+            font-size: 16px;
+            color: #e06b8a;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .input-wrapper input,
+        .input-wrapper select {
+            width: 100%;
+            padding: 12px 16px 12px 44px;
+            border: 1.5px solid rgba(200, 160, 220, 0.40);
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(4px);
+            transition: all 0.25s ease;
+            color: #2d1a33;
+            outline: none;
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper select:focus {
+            border-color: #c084d0;
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 0 0 4px rgba(193, 132, 208, 0.20);
+        }
+
+        .input-wrapper input[type="color"] {
+            padding: 6px 6px 6px 44px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #a07fb0;
+            font-weight: 300;
+        }
+
+        /* ========== TOMBOL ========== */
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Quicksand', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #f8a4c8, #cd8fd6);
+            box-shadow: 0 6px 20px rgba(205, 143, 214, 0.40);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(205, 143, 214, 0.55);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.97);
+        }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(60, 30, 70, 0.50);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.94); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-card {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.30);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 28px;
+            padding: 32px 30px 36px;
+            box-shadow: 0 30px 80px rgba(120, 60, 140, 0.30);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.80) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #4c2b57;
+            margin-bottom: 4px;
+        }
+
+        .modal-title span {
+            display: inline-block;
+            animation: pulse-heart 1.6s ease-in-out infinite;
+        }
+
+        .modal-sub {
+            text-align: center;
+            font-size: 14px;
+            color: #7a4f8a;
+            margin-bottom: 22px;
+        }
+
+        /* ========== REKAP DATA ========== */
+        .rekap-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(4px);
+            border-radius: 18px;
+            padding: 22px 20px;
+            border: 2px dashed #d8b4e0;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .rekap-card::before {
+            content: '🌸';
+            position: absolute;
+            top: -12px;
+            right: -8px;
+            font-size: 28px;
+            opacity: 0.6;
+            transform: rotate(15deg);
+        }
+
+        .rekap-card::after {
+            content: '🌷';
+            position: absolute;
+            bottom: -12px;
+            left: -8px;
+            font-size: 26px;
+            opacity: 0.5;
+            transform: rotate(-10deg);
+        }
+
+        .rekap-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(200, 160, 220, 0.25);
+            font-size: 15px;
+            color: #3d2647;
+        }
+
+        .rekap-item:last-child {
+            border-bottom: none;
+        }
+
+        .rekap-item .label {
+            font-weight: 600;
+            color: #5e3a6b;
+        }
+
+        .rekap-item .value {
+            font-weight: 400;
+            text-align: right;
+            max-width: 60%;
+            word-break: break-word;
+        }
+
+        .color-preview {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        /* ========== TOMBOL DOWNLOAD ========== */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'Quicksand', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #b38bc9, #e07a9e);
+            box-shadow: 0 6px 20px rgba(180, 120, 200, 0.35);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-download:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(180, 120, 200, 0.50);
+        }
+
+        .btn-download:active {
+            transform: scale(0.97);
+        }
+
+        /* ========== TOMBOL TUTUP MODAL ========== */
+        .btn-close-modal {
+            display: block;
+            margin: 14px auto 0;
+            padding: 8px 28px;
+            border: none;
+            border-radius: 30px;
+            background: rgba(200, 160, 220, 0.30);
+            backdrop-filter: blur(4px);
+            font-size: 14px;
+            font-weight: 600;
+            color: #4c2b57;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .btn-close-modal:hover {
+            background: rgba(200, 160, 220, 0.50);
+            transform: scale(1.04);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 24px 18px 28px;
+                border-radius: 20px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .modal-card {
+                padding: 24px 18px 28px;
+            }
+
+            .rekap-item {
+                font-size: 14px;
+                flex-wrap: wrap;
+            }
+
+            .rekap-item .value {
+                max-width: 100%;
+                text-align: left;
+                margin-top: 2px;
+            }
+
+            .falling-element {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== ELEMEN JATUH (HATI & BUNGA) DIJSIMPAN OLEH JS ========== -->
+
+    <!-- ========== KARTU FORM ========== -->
+    <div class="container" id="formContainer">
+        <div class="title">
+            Isi Biodata Kamu <span>💕</span>
+        </div>
+        <div class="subtitle">Yuk kenalan lebih dekat ✨</div>
+
+        <form id="biodataForm" novalidate>
+            <!-- Nama -->
+            <div class="form-group">
+                <label><i>🌸</i> Nama Lengkap</label>
+                <div class="input-wrapper">
+                    <span class="icon-heart">❤️</span>
+                    <input type="text" id="nama" placeholder="Tulis namamu..." required />
+                </div>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="form-group">
+                <label><i>🌷</i> Tanggal Lahir</label>
+                <div class="input-wrapper">
+                    <span class="icon-heart">💖</span>
+                    <input type="date" id="tanggal" required />
+                </div>
+            </div>
+
+            <!-- Warna Kesukaan -->
+            <div class="form-group">
+                <label><i>🎨</i> Warna Kesukaan</label>
+                <div class="input-wrapper">
+                    <span class="icon-heart">💗</span>
+                    <input type="color" id="warna" value="#e07a9e" />
+                </div>
+            </div>
+
+            <!-- Hobi -->
+            <div class="form-group">
+                <label><i>🌟</i> Hobi</label>
+                <div class="input-wrapper">
+                    <span class="icon-heart">💝</span>
+                    <input type="text" id="hobi" placeholder="Misal: membaca, musik..." required />
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Kirim Data ✨</button>
+        </form>
+    </div>
+
+    <!-- ========== MODAL ========== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-title">
+                Terima Kasih! <span>✨</span>
+            </div>
+            <div class="modal-sub">Data Berhasil Dikirim 💌</div>
+
+            <!-- Rekap Data -->
+            <div class="rekap-card" id="rekapContainer">
+                <!-- akan diisi oleh JS -->
+            </div>
+
+            <!-- Tombol Download -->
+            <button class="btn-download" id="downloadBtn">
+                ⬇️ Download Data.txt
+            </button>
+
+            <!-- Tombol Tutup -->
+            <button class="btn-close-modal" id="closeModalBtn">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // ================================================================
+        //  1.  ANIMASI JATUH (HATI + BUNGA)
+        // ================================================================
+        (function createFallingElements() {
+            const emojis = ['❤️', '💖', '💗', '🌸', '🌷', '🌺', '💕', '✨', '🦋'];
+            const container = document.body;
+
+            function spawn() {
+                const el = document.createElement('div');
+                el.className = 'falling-element';
+                el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                el.style.left = Math.random() * 100 + 'vw';
+                el.style.fontSize = (18 + Math.random() * 28) + 'px';
+                el.style.animationDuration = (8 + Math.random() * 12) + 's';
+                el.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(el);
+
+                // Hapus setelah animasi selesai agar DOM tidak membengkak
+                setTimeout(() => {
+                    if (el.parentNode) el.remove();
+                }, 22000);
+            }
+
+            // Buat 25 elemen awal dengan jeda
+            for (let i = 0; i < 25; i++) {
+                setTimeout(spawn, i * 300);
+            }
+
+            // Dan terus spawn setiap 2 detik
+            setInterval(spawn, 2000);
+        })();
+
+        // ================================================================
+        //  2.  FORM SUBMIT
+        // ================================================================
+        const form = document.getElementById('biodataForm');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const rekapContainer = document.getElementById('rekapContainer');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Ambil nilai
+            const nama = document.getElementById('nama').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const warna = document.getElementById('warna').value;
+            const hobi = document.getElementById('hobi').value.trim();
+
+            // Validasi sederhana
+            if (!nama || !tanggal || !hobi) {
+                alert('Mohon isi semua field yang wajib (Nama, Tanggal Lahir, Hobi). 💕');
+                return;
+            }
+
+            // Format tanggal agar lebih cantik
+            const tglObj = new Date(tanggal + 'T00:00:00');
+            const tglFormatted = tglObj.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            // Tampilkan rekap
+            rekapContainer.innerHTML = `
+                    <div class="rekap-item">
+                        <span class="label">🌸 Nama</span>
+                        <span class="value">${escapeHtml(nama)}</span>
+                    </div>
+                    <div class="rekap-item">
+                        <span class="label">🌷 Tanggal Lahir</span>
+                        <span class="value">${escapeHtml(tglFormatted)}</span>
+                    </div>
+                    <div class="rekap-item">
+                        <span class="label">🎨 Warna Kesukaan</span>
+                        <span class="value">
+                            ${escapeHtml(warna)}
+                            <span class="color-preview" style="background:${escapeHtml(warna)};"></span>
+                        </span>
+                    </div>
+                    <div class="rekap-item">
+                        <span class="label">🌟 Hobi</span>
+                        <span class="value">${escapeHtml(hobi)}</span>
+                    </div>
+                `;
+
+            // Simpan data ke atribut untuk digunakan di download
+            modalOverlay.dataset.nama = nama;
+            modalOverlay.dataset.tanggal = tglFormatted;
+            modalOverlay.dataset.warna = warna;
+            modalOverlay.dataset.hobi = hobi;
+
+            // Tampilkan modal
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // cegah scroll
+        });
+
+        // ================================================================
+        //  3.  DOWNLOAD .TXT
+        // ================================================================
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            const nama = modalOverlay.dataset.nama || '—';
+            const tanggal = modalOverlay.dataset.tanggal || '—';
+            const warna = modalOverlay.dataset.warna || '—';
+            const hobi = modalOverlay.dataset.hobi || '—';
+
+            const content = `
+        =====================================
+            💕 DATA BIODATA 💕
+        =====================================
+
+        🌸 Nama Lengkap    : ${nama}
+        🌷 Tanggal Lahir   : ${tanggal}
+        🎨 Warna Kesukaan  : ${warna}
+        🌟 Hobi            : ${hobi}
+
+        =====================================
+        Terima kasih sudah mengisi! ✨
+        `;
+
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `biodata_${new Date().toISOString().slice(0,10)}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+
+        // ================================================================
+        //  4.  TUTUP MODAL
+        // ================================================================
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+
+        // Tutup modal jika klik di luar card (overlay)
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // Tutup dengan tombol ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // ================================================================
+        //  5.  UTILITY: ESCAPE HTML (mencegah XSS)
+        // ================================================================
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ================================================================
+        //  6.  SET DEFAULT DATE (hari ini)
+        // ================================================================
+        (function setDefaultDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('tanggal').value = `${yyyy}-${mm}-${dd}`;
+        })();
+
+        console.log('💖 Website Romantis Elegan siap digunakan!');
+    </script>
+
+</body>
+</html>
